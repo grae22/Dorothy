@@ -1,0 +1,92 @@
+<Project>
+  <TagCollection>
+    <Tag id="2">
+      <Name>NewTag</Name>
+      <Description>Describe this tag...</Description>
+    </Tag>
+    <Tag id="3">
+      <Name>a</Name>
+      <Description>Describe this tag...</Description>
+    </Tag>
+    <Tag id="4">
+      <Name>b</Name>
+      <Description>Describe this tag...</Description>
+    </Tag>
+    <Tag id="5">
+      <Name>c</Name>
+      <Description>Describe this tag...</Description>
+    </Tag>
+    <Tag id="6">
+      <Name>d</Name>
+      <Description>Describe this tag...</Description>
+    </Tag>
+    <Tag id="7">
+      <Name>e</Name>
+      <Description>Describe this tag...</Description>
+    </Tag>
+    <Tag id="8">
+      <Name>f</Name>
+      <Description>Describe this tag...</Description>
+    </Tag>
+    <Tag id="9">
+      <Name>g</Name>
+      <Description>Describe this tag...</Description>
+    </Tag>
+    <Tag id="10">
+      <Name>i</Name>
+      <Description>Describe this tag...</Description>
+    </Tag>
+    <Tag id="11">
+      <Name>j</Name>
+      <Description>Describe this tag....</Description>
+    </Tag>
+    <Tag id="12">
+      <Name>k</Name>
+      <Description>Describe this tag...</Description>
+    </Tag>
+  </TagCollection>
+  <ItemCollection>
+    <Item id="0">
+      <Name>New Item</Name>
+      <Description>
+      </Description>
+      <ParentId>-1</ParentId>
+      <TagCollection />
+    </Item>
+    <Item id="1">
+      <Name>New Item 2</Name>
+      <Description>
+      </Description>
+      <ParentId>-1</ParentId>
+      <TagCollection />
+    </Item>
+    <Item id="2">
+      <Name>New Item 3</Name>
+      <Description>
+      </Description>
+      <ParentId>5</ParentId>
+      <TagCollection />
+    </Item>
+    <Item id="3">
+      <Name>New Item 4</Name>
+      <Description>
+      </Description>
+      <ParentId>1</ParentId>
+      <TagCollection />
+    </Item>
+    <Item id="4">
+      <Name>New Item 5</Name>
+      <Description>
+      </Description>
+      <ParentId>1</ParentId>
+      <TagCollection />
+    </Item>
+    <Item id="5">
+      <Name>New Item 6</Name>
+      <Description>
+      </Description>
+      <ParentId>0</ParentId>
+      <TagCollection />
+    </Item>
+  </ItemCollection>
+</Project>
