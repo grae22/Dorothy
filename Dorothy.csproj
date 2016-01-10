@@ -61,6 +61,12 @@
     <Compile Include="Data\Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\SelectTagDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SelectTagDlg.Designer.cs">
+      <DependentUpon>SelectTagDlg.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\SelectItemDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\SelectTagDlg.resx">
+      <DependentUpon>SelectTagDlg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\SelectItemDlg.resx">
       <DependentUpon>SelectItemDlg.cs</DependentUpon>
     </EmbeddedResource>

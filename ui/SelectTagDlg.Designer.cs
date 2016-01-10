@@ -1,6 +1,6 @@
 ﻿namespace Dorothy.UI
 {
-  partial class SelectItemDlg
+  partial class SelectTagDlg
   {
     /// <summary>
     /// Required designer variable.
@@ -29,11 +29,11 @@
     private void InitializeComponent()
     {
       this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.uiItems = new System.Windows.Forms.ListBox();
+      this.label1 = new System.Windows.Forms.Label();
+      this.uiFilter = new System.Windows.Forms.TextBox();
+      this.uiTags = new System.Windows.Forms.ListBox();
       this.uiCancel = new System.Windows.Forms.Button();
       this.uiOK = new System.Windows.Forms.Button();
-      this.uiFilter = new System.Windows.Forms.TextBox();
-      this.label1 = new System.Windows.Forms.Label();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -41,23 +41,41 @@
       // 
       this.groupBox1.Controls.Add(this.label1);
       this.groupBox1.Controls.Add(this.uiFilter);
-      this.groupBox1.Controls.Add(this.uiItems);
+      this.groupBox1.Controls.Add(this.uiTags);
       this.groupBox1.Location = new System.Drawing.Point(12, 12);
       this.groupBox1.Name = "groupBox1";
       this.groupBox1.Padding = new System.Windows.Forms.Padding(10, 30, 10, 10);
       this.groupBox1.Size = new System.Drawing.Size(594, 251);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
-      this.groupBox1.Text = "Items:";
+      this.groupBox1.Text = "Tags:";
       // 
-      // uiItems
+      // label1
       // 
-      this.uiItems.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.uiItems.FormattingEnabled = true;
-      this.uiItems.Location = new System.Drawing.Point(10, 43);
-      this.uiItems.Name = "uiItems";
-      this.uiItems.Size = new System.Drawing.Size(574, 198);
-      this.uiItems.TabIndex = 0;
+      this.label1.AutoSize = true;
+      this.label1.Location = new System.Drawing.Point(427, 20);
+      this.label1.Name = "label1";
+      this.label1.Size = new System.Drawing.Size(32, 13);
+      this.label1.TabIndex = 2;
+      this.label1.Text = "Filter:";
+      // 
+      // uiFilter
+      // 
+      this.uiFilter.Location = new System.Drawing.Point(465, 17);
+      this.uiFilter.Name = "uiFilter";
+      this.uiFilter.Size = new System.Drawing.Size(119, 20);
+      this.uiFilter.TabIndex = 1;
+      this.uiFilter.TextChanged += new System.EventHandler(this.uiFilter_TextChanged);
+      // 
+      // uiTags
+      // 
+      this.uiTags.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.uiTags.FormattingEnabled = true;
+      this.uiTags.Location = new System.Drawing.Point(10, 43);
+      this.uiTags.Name = "uiTags";
+      this.uiTags.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+      this.uiTags.Size = new System.Drawing.Size(574, 198);
+      this.uiTags.TabIndex = 0;
       // 
       // uiCancel
       // 
@@ -79,24 +97,7 @@
       this.uiOK.UseVisualStyleBackColor = true;
       this.uiOK.Click += new System.EventHandler(this.uiOK_Click);
       // 
-      // uiFilter
-      // 
-      this.uiFilter.Location = new System.Drawing.Point(465, 17);
-      this.uiFilter.Name = "uiFilter";
-      this.uiFilter.Size = new System.Drawing.Size(119, 20);
-      this.uiFilter.TabIndex = 1;
-      this.uiFilter.TextChanged += new System.EventHandler(this.uiFilter_TextChanged);
-      // 
-      // label1
-      // 
-      this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(427, 20);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(32, 13);
-      this.label1.TabIndex = 2;
-      this.label1.Text = "Filter:";
-      // 
-      // SelectItemDlg
+      // SelectTagDlg
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,9 +108,9 @@
       this.Controls.Add(this.uiCancel);
       this.Controls.Add(this.groupBox1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      this.Name = "SelectItemDlg";
+      this.Name = "SelectTagDlg";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Select Item";
+      this.Text = "Select Tags";
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
       this.ResumeLayout(false);
@@ -119,7 +120,7 @@
     #endregion
 
     private System.Windows.Forms.GroupBox groupBox1;
-    private System.Windows.Forms.ListBox uiItems;
+    private System.Windows.Forms.ListBox uiTags;
     private System.Windows.Forms.Button uiCancel;
     private System.Windows.Forms.Button uiOK;
     private System.Windows.Forms.Label label1;

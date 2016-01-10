@@ -65,7 +65,11 @@
       <Description>
       </Description>
       <ParentId>5</ParentId>
-      <TagCollection />
+      <TagCollection>
+        <TagId>3</TagId>
+        <TagId>5</TagId>
+        <TagId>7</TagId>
+      </TagCollection>
     </Item>
     <Item id="3">
       <Name>New Item 4</Name>

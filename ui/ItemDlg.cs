@@ -37,6 +37,15 @@ namespace Dorothy.UI
         uiChildren.Items.Add( child );
       }
 
+      PopulateTagsList();
+    }
+
+    //-------------------------------------------------------------------------
+
+    void PopulateTagsList()
+    {
+      uiTags.Items.Clear();
+
       foreach( Tag tag in _item.Tags )
       {
         uiTags.Items.Add( tag );
@@ -103,6 +112,40 @@ namespace Dorothy.UI
       // Update the item.
       _item.Name = uiName.Text;
       _item.Description = uiDescription.Text;
+    }
+
+    //-------------------------------------------------------------------------
+
+    private void uiAddTag_Click( object sender, EventArgs e )
+    {
+      SelectTagDlg dlg =
+        new SelectTagDlg(
+          Data.Tag.Tags,
+          _item.Tags );
+      dlg.ShowDialog( this );
+
+      if( dlg.DialogResult == DialogResult.OK )
+      {
+        _item.Tags = dlg.SelectedTags;
+      }
+
+      dlg.Dispose();
+
+      PopulateTagsList();
+    }
+
+    //-------------------------------------------------------------------------
+
+    private void uiRemoveTag_Click( object sender, EventArgs e )
+    {
+      if( uiTags.SelectedItem == null )
+      {
+        return;
+      }
+
+      _item.Tags.Remove( uiTags.SelectedItem as Tag );
+
+      PopulateTagsList();
     }
 
     //-------------------------------------------------------------------------

@@ -5,33 +5,33 @@ using Dorothy.Data;
 
 namespace Dorothy.UI
 {
-  public partial class SelectItemDlg : Form
+  public partial class SelectTagDlg : Form
   {
     //-------------------------------------------------------------------------
 
-    private List<Item> _items;
+    public List<Tag> SelectedTags { get; set; }
+
+    private List<Tag> _tags;
 
     //-------------------------------------------------------------------------
 
-    public SelectItemDlg(
-      List<Item> items,
-      List<Item> selectedItems,
-      bool multiSelect,
-      string title )
+    public SelectTagDlg(
+      List<Tag> tags,
+      List<Tag> selectedTags )
     {
+      SelectedTags = new List<Data.Tag>();
+
       InitializeComponent();
 
-      _items = items;
-      Text = title;
-      uiItems.SelectionMode = ( multiSelect ? SelectionMode.MultiExtended : SelectionMode.One );
+      _tags = tags;
       
-      PopulateItemsList();
+      PopulateTagsList();
 
-      foreach( Item item in selectedItems )
+      foreach( Tag tag in selectedTags )
       {
-        if( uiItems.Items.Contains( item ) )
+        if( uiTags.Items.Contains( tag ) )
         {
-          uiItems.SelectedItems.Add( item );
+          uiTags.SelectedItems.Add( tag );
         }
       }
     }
@@ -42,7 +42,7 @@ namespace Dorothy.UI
     {
       get
       {
-        return uiItems.SelectedItem as Item;
+        return uiTags.SelectedItem as Item;
       }
     }
 
@@ -50,7 +50,15 @@ namespace Dorothy.UI
 
     private void uiOK_Click( object sender, EventArgs e )
     {
+      SelectedTags.Clear();
+
+      foreach( Tag tag in uiTags.SelectedItems )
+      {
+        SelectedTags.Add( tag );
+      }
+
       DialogResult = DialogResult.OK;
+
       Close();
     }
 
@@ -58,23 +66,23 @@ namespace Dorothy.UI
 
     private void uiFilter_TextChanged( object sender, EventArgs e )
     {
-      PopulateItemsList();
+      PopulateTagsList();
     }
 
     //-------------------------------------------------------------------------
 
-    private void PopulateItemsList()
+    private void PopulateTagsList()
     {
-      uiItems.Items.Clear();
+      uiTags.Items.Clear();
 
       string filter = uiFilter.Text.ToLower();
 
-      foreach( Item item in _items )
+      foreach( Tag tag in _tags )
       {
         if( filter.Length == 0 ||
-            item.ToString().ToLower().Contains( filter ) )
+            tag.ToString().ToLower().Contains( filter ) )
         {
-          uiItems.Items.Add( item );
+          uiTags.Items.Add( tag );
         }
       }
     }
